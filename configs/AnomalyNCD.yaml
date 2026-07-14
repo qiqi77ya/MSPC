@@ -1,0 +1,86 @@
+# Public configuration example
+# The detailed configurations of MS-MGViT, PMB, and CARM
+# will be released after the peer-review process.
+
+binarization:
+  sample_rate: 4
+  min_interval_len: 4
+  erode: true
+
+models:
+  grad_from_block: 11
+  pretrained_backbone: dino_vitb8
+  n_views: 2
+  n_head: 4
+
+  # Core MS-MGViT configurations are temporarily withheld.
+  use_ms_mgvit: true
+  mask_layers: null
+  ms_layers: null
+  feature_fusion: null
+  aux_layers: null
+
+training:
+  batch_size: 48
+  num_workers: 8
+  lr: 0.003
+  gamma: 0.1
+  momentum: 0.9
+  weight_decay: 0.00005
+  epochs: 50
+
+loss:
+  # Basic training configurations
+  sup_weight: 0.3
+  memax_weight: 4
+  anomaly_thred: 0.5
+  teacher_temp: 0.04
+  warmup_teacher_temp: 0.07
+  warmup_teacher_temp_epochs: 40
+  repeat_times: 4
+
+  # Core multi-scale consistency configurations are withheld.
+  use_consistency_loss: true
+  consistency_weight: null
+  consistency_distill_temp: null
+  consistency_gate_temp: null
+  consistency_scope: null
+  consistency_select_mode: null
+  consistency_conf_thresh: null
+  consistency_top_ratio: null
+  consistency_warmup_epochs: null
+  consistency_fallback_to_unlabeled: null
+
+  # Core PMB configurations are withheld.
+  use_prototype_memory_bank: true
+  proto_weight: null
+  proto_momentum: null
+  proto_temperature: null
+  proto_conf_threshold: null
+
+inference:
+  use_carm: true
+  write_carm_metrics: false
+
+  # Core CARM configurations are temporarily withheld.
+  confidence_area_alpha: null
+  confidence_area_beta: null
+  confidence_area_eps: null
+  carm_conf_temp: null
+  carm_area_gamma: null
+  carm_use_density: null
+  carm_normalize_signals: null
+  carm_use_head_agreement: null
+  carm_agreement_weight: null
+  carm_use_margin_signal: null
+  carm_margin_mode: null
+  carm_margin_weight: null
+  carm_use_head_kl: null
+  carm_head_kl_weight: null
+
+experiment:
+  seed: 215
+  print_freq: 3
+  table_root: outputs/output_table
+  exp_name: public_example
+  exp_root: outputs
