@@ -278,9 +278,3 @@ Citation information will be added after the manuscript is accepted or publicly 
 This project is developed on top of the AnomalyNCD codebase and uses a DINO-pretrained Vision Transformer backbone. Please cite the corresponding original works when using this repository.
 
 The repository also uses the publicly available MVTec AD, MTD, and AeBAD datasets. Please follow the original dataset licenses and citation requirements.
-
-## License
-
-This repository retains the MIT License notice of the upstream AnomalyNCD implementation. See [LICENSE](LICENSE) for details.
-
-Third-party datasets, pretrained models, and external code components remain subject to their original licenses.
